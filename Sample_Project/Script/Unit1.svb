@@ -1,0 +1,11 @@
+﻿Sub Test1
+  Dim orders
+  Dim orderForm
+  Call TestedApps.Orders.Run(1, True)
+  Set orders = Sys.process("Orders")
+  Set mainForm = orders.WinFormsObject("MainForm")
+  Call orders.MainForm.MainMenu.Click("Orders|New order...")
+  Set orderForm = orders.OrderForm
+  Call orderForm.Group.ProductNames.ClickItem("ScreenSaver")
+  orderForm.ButtonOK.ClickButton
+End Sub
